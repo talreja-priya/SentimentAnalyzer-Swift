@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TextClassifierExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Reviews Sentiment Analyzer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cvx-Nk-3rU">
+                                <rect key="frame" x="48" y="62" width="318" height="23"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <color key="textColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Type/Paste your review here.." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="m0L-Rz-ix7">
+                                <rect key="frame" x="20" y="106" width="374" height="152"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="152" id="xcp-ev-oq5"/>
+                                </constraints>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Grm-f1-cRR"/>
+                                </connections>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVt-AE-ncx">
+                                <rect key="frame" x="301" y="268" width="93" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Clear Review"/>
+                                <connections>
+                                    <action selector="clearAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Ou-e0-GFB"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nj2-0y-290">
+                                <rect key="frame" x="179" y="308" width="56" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="NpA-yO-7sx"/>
+                                    <constraint firstAttribute="width" constant="56" id="pCn-q6-qDn"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGD-SC-JbQ">
+                                <rect key="frame" x="186" y="374" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f77-Nj-FP8">
+                                <rect key="frame" x="20" y="268" width="89" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Show Result"/>
+                                <connections>
+                                    <action selector="showResult:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JKW-zT-WRP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dVt-AE-ncx" firstAttribute="centerY" secondItem="f77-Nj-FP8" secondAttribute="centerY" id="1TG-rF-Flj"/>
+                            <constraint firstItem="nj2-0y-290" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Ln-MI-lyW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m0L-Rz-ix7" secondAttribute="trailing" constant="20" id="9Pe-Do-65H"/>
+                            <constraint firstItem="uGD-SC-JbQ" firstAttribute="top" secondItem="nj2-0y-290" secondAttribute="bottom" constant="10" id="Fgg-c6-pgQ"/>
+                            <constraint firstItem="dVt-AE-ncx" firstAttribute="top" secondItem="m0L-Rz-ix7" secondAttribute="bottom" constant="10" id="IkH-HY-Mr9"/>
+                            <constraint firstItem="uGD-SC-JbQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kgh-if-MBQ"/>
+                            <constraint firstItem="Cvx-Nk-3rU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kvy-xH-t5T"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dVt-AE-ncx" secondAttribute="trailing" constant="20" id="Mkr-P4-ZHD"/>
+                            <constraint firstItem="m0L-Rz-ix7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="g7Q-Ah-HNv"/>
+                            <constraint firstItem="dVt-AE-ncx" firstAttribute="top" secondItem="f77-Nj-FP8" secondAttribute="top" id="grG-6r-Aes"/>
+                            <constraint firstItem="f77-Nj-FP8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="hNE-gz-YbX"/>
+                            <constraint firstItem="Cvx-Nk-3rU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="18" id="oHm-6q-Udg"/>
+                            <constraint firstItem="nj2-0y-290" firstAttribute="top" secondItem="dVt-AE-ncx" secondAttribute="bottom" constant="10" id="vxA-RR-SHW"/>
+                            <constraint firstItem="m0L-Rz-ix7" firstAttribute="top" secondItem="Cvx-Nk-3rU" secondAttribute="bottom" constant="21" id="zND-5Z-99j"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="movieReviewText" destination="m0L-Rz-ix7" id="JTP-uk-r0T"/>
+                        <outlet property="resultImage" destination="nj2-0y-290" id="Am6-Wc-QWE"/>
+                        <outlet property="resultLabel" destination="uGD-SC-JbQ" id="Dol-vP-7cl"/>
+                        <outlet property="showResultButton" destination="f77-Nj-FP8" id="sDT-wi-koy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
+        </scene>
+    </scenes>
+</document>
